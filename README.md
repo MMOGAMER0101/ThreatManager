@@ -6,3 +6,4 @@ Kali Linux Tool
 # Commands :
 
 ` cd ThreatManager `
+` python3 OpenThreat.py `
