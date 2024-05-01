@@ -5,7 +5,6 @@ from colorama import Fore
 
 database = {}
 
-# Dosya adı
 file_name = "threats.json"
 
 def clear_screen():
@@ -137,7 +136,7 @@ def set_signal_handler():
 
 def main():
     set_signal_handler()
-    load_threats()  # Kaydedilmiş tehditleri yükle
+    load_threats()  
     while True:
         clear_screen()
         print("▀█▀ █░█ █▀▀▄ █▀ ▄▀▄ ▀█▀")
@@ -150,7 +149,7 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '0':
-            signal_handler(None, None)  # Çıkış sinyalini tetikle
+            signal_handler(None, None) 
         elif choice == '1':
             create_threat()
             input("Press Enter to continue...")
