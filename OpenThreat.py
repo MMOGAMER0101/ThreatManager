@@ -50,7 +50,8 @@ def create_threat():
             print(Fore.RED + "[ERROR]" + Fore.WHITE + " Please enter a valid phone number (numeric) or leave blank.")
     
     social_media = input("Social Media Accounts : ")
-    database[name.lower()] = {'Surname': surname or 'Unknown', 'Age': age, 'Phone Number': phone_number, 'Social Media Accounts': social_media or 'Unknown'}
+    IP = input("Enter IP Adress: ")
+    database[name.lower()] = {'Surname': surname or 'Unknown', 'Age': age or 'Unknown', 'Phone Number': phone_number or 'Unknown', 'Social Media Accounts': social_media or 'Unknown', 'IP Adress' : IP or 'Unknown'}
     save_threats()
     print("Threat saved successfully!")
 
@@ -84,7 +85,8 @@ def edit_threat(name_to_edit):
     age = input("Enter new Age: ")
     phone_number = input("Enter new Phone Number: ")
     social_media = input("Enter new Social Media Accounts: ")
-    database[name_to_edit] = {'Surname': surname or 'Unknown', 'Age': age or 'Unknown', 'Phone Number': phone_number or 'Unknown', 'Social Media Accounts': social_media or 'Unknown'}
+    IP = input("Enter new IP Adress: ")
+    database[name_to_edit] = {'Surname': surname or 'Unknown', 'Age': age or 'Unknown', 'Phone Number': phone_number or 'Unknown', 'Social Media Accounts': social_media or 'Unknown', 'IP Adress' : IP or 'Unknown'}
     save_threats()
     print("Threat edited successfully.")
 
@@ -136,7 +138,7 @@ def set_signal_handler():
 
 def main():
     set_signal_handler()
-    load_threats()  
+    load_threats()
     while True:
         clear_screen()
         print("▀█▀ █░█ █▀▀▄ █▀ ▄▀▄ ▀█▀")
@@ -149,7 +151,7 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '0':
-            signal_handler(None, None) 
+            signal_handler(None, None)
         elif choice == '1':
             create_threat()
             input("Press Enter to continue...")
